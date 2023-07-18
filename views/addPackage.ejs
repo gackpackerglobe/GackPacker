@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>GACKPACKER | ADMIN | ADD-PACKAGE</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="Free HTML Templates" name="keywords">
+	<meta content="Free HTML Templates" name="description">
+
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="icon">
+
+	<!-- Google Web Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+	<!-- Font Awesome -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+	<!-- Libraries Stylesheet -->
+	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+	<!-- Customized Bootstrap Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/addPackage.css" rel="stylesheet">
+</head>
+
+<>
+	<!-- Spinner Start -->
+	<div id="spinner" style="z-index: 100;"
+		class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+		<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+	<!-- Spinner End -->
+	<!-- Navbar Start -->
+	<div class="container-fluid position-relative nav-bar p-0">
+		<div class="container-lg position-relative p-0" style="z-index: 9;">
+			<nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+				<a href="" class="navbar-brand">
+					<h1 class="m-0 text-primary"><span class="text-dark">GACK</span>PACKER</h1>
+				</a>
+				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="/" class="nav-item nav-link active">Home</a>
+                        <a href="/about" class="nav-item nav-link">About</a> 
+                        <!-- <a href="package.html" class="nav-item nav-link">Tour Packages</a>  -->
+                        <a href="/contact" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+			</nav>
+		</div>
+	</div>
+	<!-- Navbar End -->
+
+
+	<!-- Header Start -->
+	<div class="container-fluid page-header">
+		<div class="container">
+			<div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+				<h3 class="display-4 text-white text-uppercase">Add Package</h3>
+			</div>
+		</div>
+	</div>
+	<!-- Header End -->
+
+
+
+
+	<!-- Package Start -->
+	<div class="container-fluid py-5">
+		<div class="container py-5">
+			<div class="error" style="display: none;" role="alert">
+				<strong> Error </strong>
+				<p>Somthing went Wrong!</p>
+					<button type="button" onclick="document.getElementsByClassName('error')[0].remove()"
+						class="btn-close">x</button>
+			</div>
+			<div class="text-center mb-3 pb-3">
+				<h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Admin</h6>
+				<h1>Add Package</h1>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="contact-form bg-white" style="padding: 30px;">
+						<div id="success"></div>
+						<div class="addCourse">
+							<div class="addCourse_container">
+								<form action="/addPackage" method="post" id="myform"  >
+									<input type="file" name="photos" id="photos" required >
+									<div id="svgIcon" class="img first-img" style="height: 200px;">
+										<svg onclick="load_img()" xmlns="http://www.w3.org/2000/svg" width="16"
+											height="16" fill="currentColor" class="bi bi-file-earmark-plus"
+											viewBox="0 0 16 16">
+											<path
+												d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5z" />
+											<path
+												d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
+										</svg>
+									</div>
+									<span>Click to add Images</span>
+									<div class="img-container">
+										<div class="images">
+											 
+										</div>
+									</div>
+									<div class="price_container form-row">
+										<div class="control-group col-sm-12">
+											<input type="text" class="form-control p-4" name="placeName"
+												placeholder="Enter Name of Place (kulu manali...)" id="placeName" required>
+										</div>
+									</div>
+									<div class="price_container form-row">
+										<div class="control-group col-sm-12">
+											<input type="number" class="form-control p-4" name="price"
+												placeholder="Price(in Rupees)" id="price" required>
+										</div>
+									</div>
+									<div class="price_container form-row">
+										<div class="control-group col-sm-12">
+											<textarea name="itiny" class="form-control p-4"
+												placeholder="Write Itinerary of Package" id="itiny" cols="30" required
+												rows="10"></textarea>
+										</div>
+									</div>
+									<div class="price_container form-row">
+										<div class="control-group col-sm-12">
+											<textarea name="inclusion" class="form-control p-4"
+												placeholder="Write inclusion of Package" id="inclusion" cols="30" required
+												rows="10"></textarea>
+										</div>
+									</div>
+									<div class="price_container form-row">
+										<div class="control-group col-sm-12">
+											<textarea name="exclusion" class="form-control p-4"
+												placeholder="Write exclusion of Package" id="exclusion" cols="30" required
+												rows="10"></textarea> 
+										</div>
+									</div>
+									<div class="price_container form-row">
+										Featured <input type="checkbox"  style="margin-left: 10px;" name="featured" id="featured">
+									</div>
+									<div class=" price_container col-md-12">
+										<div class="mb-3 mb-md-0">
+											<div class="date" id="date2" data-target-input="nearest">
+												<input type="text" name="sdate"
+													class="form-control p-4 datetimepicker-input"
+													placeholder="Start Date" data-target="#date2"
+													data-toggle="datetimepicker" required />
+											</div>
+										</div>
+									</div>
+									<div class="price_container col-md-12">
+										<div class="mb-3 mb-md-0">
+											<div class="date" id="date1" data-target-input="nearest">
+												<input type="text" class="form-control p-4 datetimepicker-input"
+													name="edate" placeholder="End Date" data-target="#date1"
+													data-toggle="datetimepicker" required />
+											</div>
+										</div>
+									</div>
+
+
+
+
+
+									<div class="price_container col-md-12">
+										<select class="p-4" style="width: 100%;" name="country" id="country">
+											<option value="" >-- Country --</option>
+										</select>
+									</div>
+
+									<div class="price_container col-md-12">
+										<select class="p-4" style="width: 100%;" name="state" id="states">
+											<option value="">-- States --</option>
+										</select>
+									</div>
+									<div class="price_container col-md-12">
+										<select class="p-4" style="width: 100%;" name="city" id="city">
+											<option value="">-- City --</option>
+										</select>
+									</div>
+
+
+
+
+
+
+
+									<div class="price_container form-row">
+										<div class="control-group col-sm-12">
+											<textarea name="desc" class="form-control p-4"
+												placeholder="Write descpsion of Package" id="desc" cols="30" required
+												rows="10"></textarea>
+										</div>
+									</div>
+									<button type="submit" class="btn btn-primary py-3 px-4" id="sub_btn">submit</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Contact End -->
+
+	  <!-- Footer Start -->
+	  <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
+        <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="text-primary"><span class="text-white">GACK
+                    </span>PACKER</h1>
+                </a>
+                <p>Sed ipsum clita tempor ipsum ipsum amet sit ipsum lorem amet labore rebum lorem ipsum dolor. No sed
+                    vero lorem dolor dolor</p>
+                <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Follow Us</h6>
+                <div class="d-flex justify-content-start">
+                    <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Our Services</h5>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white-50 mb-2" href="/about"><i class="fa fa-angle-right mr-2"></i>About</a> 
+                    <a class="text-white-50 mb-2" href="/searchPackage"><i class="fa fa-angle-right mr-2"></i>Tour Packages</a>
+                    <a class="text-white-50 mb-2" href="/contact"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                    <a class="text-white-50 mb-2" href="/login"><i class="fa fa-angle-right mr-2"></i>Admin Login</a> 
+                </div>
+            </div>  
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5"
+        style="border-color: rgba(256, 256, 256, .1) !important;">
+        <div class="row">
+            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0 text-white-50">Copyright &copy; <a href="#">GeekPicker</a>. All Rights Reserved.</a>
+                </p>
+            </div>
+            <div class="col-lg-6 text-center text-md-right">
+                <p class="m-0 text-white-50">Designed with Love by <a href="https://deepaksuthar.vercel.app">Deepak Suthar</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+	<!-- Back to Top -->
+	<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+	<!-- JavaScript Libraries -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/easing/easing.min.js"></script>
+	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+	<script src="lib/tempusdominus/js/moment.min.js"></script>
+	<script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+	<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+	<!-- Template Javascript -->
+	<script src="js/main.js"></script>
+	<script src="js/imports.js"></script>
+	<script src="js/addPackage.js"></script>
+	</body>
+
+</html>

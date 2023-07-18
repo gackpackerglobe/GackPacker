@@ -1,0 +1,12 @@
+let featuredPackagediv = document.getElementById('featuredPackage');
+let photos_input = document.getElementById('photos');
+let addPackageForm = document.getElementById('myform');
+let countries = document.getElementById('country');
+let states = document.getElementById('states');
+let cities = document.getElementById('city');
+let svgIcon = document.getElementById('svgIcon');
+let searchBox=document.getElementById('searchBox');
+let searchItem=document.getElementById('searchItem');
+let loadMorePackge=document.getElementById('loadMorePackge');
+let loadMoreBox=document.getElementsByClassName('loadMore')[0];
+let detailsBox=document.getElementById('deatilsBox');

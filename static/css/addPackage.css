@@ -1,0 +1,99 @@
+.tags {
+	font-size: 15px;
+	padding: 5px;
+	margin: 10px;
+	background-color: rgb(238, 238, 238);
+	border: 1px solid black;
+	border-radius: 5px;
+	color: black;
+	display: inline-block;
+}
+
+.selected {
+	background-color: rgb(34, 97, 255);
+	color: #30b0b7;
+}
+
+.heading {
+	font-size: 30px;
+	width: 100%;
+	color: #30b0b7;
+	text-align: center;
+	padding: 20px;
+	margin-top: 80px;
+}
+
+.addCourse_container {
+	margin: auto;
+	width: 60%;
+}
+
+.images {
+	height: 200px;
+	width: max-content;
+}
+
+.img {
+	display: inline-block;
+	height: 100%;
+	width: 150px;
+	padding: 0 10px;
+	position: relative;
+}
+
+.img img,
+.img svg {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 6px;
+}
+
+.img svg {
+	color: #30b0b7;
+}
+
+.first-img {
+	border: 1px solid #30b0b7;
+	border-radius: 5px;
+}
+
+.img-container {
+	width: 100%;
+	overflow-x: auto;
+	margin: 10px 0;
+}
+
+.img-container::-webkit-scrollbar {
+	display: none;
+}
+
+
+.img span {
+	position: absolute;
+	right: 17px;
+	color: #30b0b7;
+	font-size: 14px;
+}
+
+.circle {
+	display: inline;
+}
+
+.price_container {
+	margin: 20px 0;
+}
+
+.loading_icon {
+	animation: rotateme 1s linear infinite;
+}
+
+@keyframes rotateme {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
