@@ -109,18 +109,18 @@ const createDetailPackge = (data) => {
 					<div class="col-lg-7 col-md-6">
 						<div class="row g-3">
 							<div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-								<a class="position-relative d-block overflow-hidden" target="__blank" href="${data.images[0]}">
+								<a class="position-relative d-block overflow-hidden" target="__blank" href="${data.images[4]}">
 									<img class="img-fluid" style="    margin-bottom: 15px;" src="${data.images[4]||'img/nomore.png'}">
 								</a>
 							</div>
 							<div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-								<a class="position-relative d-block overflow-hidden" target="__blank" href="${data.images[0]}">
+								<a class="position-relative d-block overflow-hidden" target="__blank" href="${data.images[1]}">
 									<img class="img-fluid" src="${data.images[1]||'img/nomore.png'}">
 	
 								</a>
 							</div>
 							<div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-								<a class="position-relative d-block overflow-hidden" target="__blank" href="${data.images[0]}"> 
+								<a class="position-relative d-block overflow-hidden" target="__blank" href="${data.images[2]}"> 
 									<img class="img-fluid" src="${data.images[2]||'img/nomore.png'}">
 	
 								</a>
@@ -128,7 +128,7 @@ const createDetailPackge = (data) => {
 						</div>
 					</div>
 					<div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-						<a class="position-relative d-block h-100 overflow-hidden" target="__blank" href="${data.images[0]}"> 
+						<a class="position-relative d-block h-100 overflow-hidden" target="__blank" href="${data.images[3]}"> 
 								<img class="img-fluid position-absolute w-100 h-100" style="object-fit: cover;" src="${data.images[3]||'img/nomore.png'}">
 						</a>
 					</div>
