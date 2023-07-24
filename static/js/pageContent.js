@@ -24,7 +24,7 @@ function getFormattedDate(dateString) {
 const createPackage = (data) => {
 	let { days, nights } = calculateDaysAndNights(data.sdate, data.edate);
 	return `<div class="col-lg-4 col-md-6 mb-4">
-	<div class="package-item bg-white mb-2"  onclick="window.open('/details?packageId=${data._id}','_self')" >
+	<div class="package-item bg-white mb-2" style="cursor:pointer"  onclick="window.open('/details?packageId=${data._id}','_self')" >
 		<img class="img-fluid" src="${data.featureImg}" alt="">
 		<div class="p-4">
 			<div class="d-flex justify-content-between mb-3">
@@ -32,7 +32,7 @@ const createPackage = (data) => {
 						class="fa fa-map-marker-alt text-primary mr-2"></i>${data.country}</small>
 				<small class="m-0"><i class="fa fa-light fa-clock text-primary mr-2"></i>${days}-days & ${nights}-nights</small>
 			</div>
-			<a class="h5 text-decoration-none" href="">${data.placeName}</a>
+			<a class="h5 text-decoration-none" disabled>${data.placeName}</a>
 			<div class="border-top mt-4 pt-4">
 				<div class="d-flex justify-content-between">
 					<h6 class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>${getFormattedDate(data.sdate)}-${getFormattedDate(data.edate)}
@@ -71,8 +71,8 @@ const createSearchPackage = (data) => {
 	</div>`
 }
 
-const createDetailPackge = (data) => {
-	// console.log(getFormattedDate(data.sdate))
+const createDetailPackge = (data) => { 
+	console.log(data)
 	let date1=getFormattedDate(data.sdate).split(" ")[0];
 	let month1=getFormattedDate(data.sdate).split(" ")[1];
 	let date2=getFormattedDate(data.edate).split(" ")[0];
@@ -98,7 +98,7 @@ const createDetailPackge = (data) => {
 		<span class="text-primary text-uppercase text-decoration-none" >${data.state}</span>
 		<span class="text-primary px-2">|</span>
 		<span class="text-primary text-uppercase text-decoration-none" >${data.country}</span> 
-		<h5 class="m-0" style="position:absolute;right:35px"><i class="fa fa-rupee-sign text-primary mr-2" ></i>${data.price}</h5>
+		<h5 class="m-0 my-price" style="position:absolute;right:35px"><i class="fa fa-rupee-sign text-primary mr-2" ></i>${data.price}</h5>
 		</div>
 		<h2 class="mb-3">Description:</h2>
 		<p>${data.desc}</p>
@@ -109,27 +109,27 @@ const createDetailPackge = (data) => {
 					<div class="col-lg-7 col-md-6">
 						<div class="row g-3">
 							<div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-								<a class="position-relative d-block overflow-hidden" href="">
-									<img onclick="window.open('${window.location.origin}/${data.images[0]}')" class="img-fluid" style="    margin-bottom: 15px;" src="${data.images[4]||'img/nomore.png'}">
+								<a class="position-relative d-block overflow-hidden" target="__blank" href="${data.images[0]}">
+									<img class="img-fluid" style="    margin-bottom: 15px;" src="${data.images[4]||'img/nomore.png'}">
 								</a>
 							</div>
 							<div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-								<a class="position-relative d-block overflow-hidden" href="">
-									<img class="img-fluid" onclick="window.open('${data.images[0]}')" src="${data.images[1]||'img/nomore.png'}">
+								<a class="position-relative d-block overflow-hidden" target="__blank" href="${data.images[0]}">
+									<img class="img-fluid" src="${data.images[1]||'img/nomore.png'}">
 	
 								</a>
 							</div>
 							<div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-								<a class="position-relative d-block overflow-hidden" href=""> 
-									<img class="img-fluid" onclick="window.open('${data.images[0]}')" src="${data.images[2]||'img/nomore.png'}">
+								<a class="position-relative d-block overflow-hidden" target="__blank" href="${data.images[0]}"> 
+									<img class="img-fluid" src="${data.images[2]||'img/nomore.png'}">
 	
 								</a>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-						<a class="position-relative d-block h-100 overflow-hidden" href=""> 
-								<img class="img-fluid position-absolute w-100 h-100" style="object-fit: cover;" onclick="window.open('${window.location.origin}/${data.images[0]}')" src="${data.images[3]||'img/nomore.png'}">
+						<a class="position-relative d-block h-100 overflow-hidden" target="__blank" href="${data.images[0]}"> 
+								<img class="img-fluid position-absolute w-100 h-100" style="object-fit: cover;" src="${data.images[3]||'img/nomore.png'}">
 						</a>
 					</div>
 				</div>
@@ -141,7 +141,7 @@ const createDetailPackge = (data) => {
 		<p>${data.exclusion}</p>
 			<h2 class="mb-3">Initiny</h2>
 		<p>${data.itiny}</p>
-		<button class="btn btn-primary px-3">Book</button>
+		 <a href="https://api.whatsapp.com/send?phone=70713 41203&text=Hello, I want to know about trips and plans for ${data.placeName}" target="_blank" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
 	</div>
 </div>`
 }

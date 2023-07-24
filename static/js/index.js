@@ -21,6 +21,8 @@ const myAJAX = (method, url, data) => {
 const featuredPackageFn = async () => {
 	try {
 		let featuredPackage = await myAJAX("GET", '/featuredPackage');
+		if (featuredPackage.length == 0) featuredPackagediv.innerHTML = "No Packages to Show."
+		else featuredPackagediv.innerHTML = ""
 		featuredPackage.map(package => {
 			featuredPackagediv.innerHTML += createPackage(package);
 		})

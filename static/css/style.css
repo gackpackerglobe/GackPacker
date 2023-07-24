@@ -333,6 +333,12 @@ legend {
   }
 }
 
+@media (max-width: 500px) {
+  .my-price {
+    transform: translate(0px, 35px);
+  }
+}
+
 progress {
   vertical-align: baseline;
 }

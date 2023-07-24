@@ -1,8 +1,7 @@
 window.onload=async()=>{
 	let packageId = location.href.split('?')[1].split('=')[1];
      let data=await myAJAX('GET',`/details/${packageId}`);
-	  detailsBox.innerHTML='';
-	//   console.log(data);
+	  detailsBox.innerHTML=''; 
 	data.map((item)=>{
 		detailsBox.innerHTML+=createDetailPackge(item);
 	})
